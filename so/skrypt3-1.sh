@@ -1,7 +1,7 @@
 #!/bin/bash
 
 tekst="";
-slownik="w.in"
+slownik="wejscieSkrypt3.in"
 
 read -p "Podaj tekst do sprawdzenia: " tekst
 
