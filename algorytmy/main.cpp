@@ -119,8 +119,6 @@ String* add(String* A, String* B, int carry = 0) {
     return new String(newDigit, add(nextA, nextB, sum / 10));
 }
 
-
-
 String* subtract(String* A, String* B, int borrow = 0) {
     if (!A || A->znak == 0 || A->znak == '-') {
         return nullptr;
@@ -160,7 +158,6 @@ String* addMinus(String* a) {
     return a;
 }
 
-
 String* deleteZeros(String* A, int* wsk) {
     if (A->znak == '0') (*wsk)++;
     else if (A->znak == '-') return A;
@@ -179,7 +176,6 @@ String* deleteZeros(String* A, int* wsk) {
     }
     return A;
 }
-
 
 String* hard_math(String* A, String* B) { //dodawanie
     int wsk = 0;
@@ -239,6 +235,7 @@ String* hard_math(String* A, String* B) { //dodawanie
     if (minusA == 1 && minusB == 0) return wiekszy == 1 ? addMinus(subtract(A, B)) : subtract(B, A);
     if (minusA == 0 && minusB == 1) return wiekszy != -1 ? subtract(A, B) : addMinus(subtract(B, A));
 }
+
 String* copyString(String* a) { //kopiowanie stringa
     if (a->next != nullptr) {
         String* pom = new String(a->znak, copyString(a->next));
@@ -269,7 +266,6 @@ String* deleteMinus(String* a) {
     return a;
 }
 
-
 String* merge(String* a, String* b) {
     if (b == nullptr) return a;
     if (b->next == nullptr || b->next->znak == 0) {
@@ -279,8 +275,6 @@ String* merge(String* a, String* b) {
     b->next = merge(a, b->next);
     return b;
 }
-
-
 
 bool whetherEqualZero(String* A) {
     if (A == nullptr || A->znak == 0) return true;
@@ -347,6 +341,8 @@ int Compare(String* A, String* B) { // 1-A>b, -1-A<B, 0-A=B
     }
     return 0;
 }
+
+
 
 int main() {
     cin.tie(0); cout.tie(0);
